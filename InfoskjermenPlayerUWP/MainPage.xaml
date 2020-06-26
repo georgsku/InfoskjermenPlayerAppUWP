@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="InfoskjermenPlayerUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InfoskjermenPlayerUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <WebView x:Name="splash" Source="ms-appx-web:///splashscreen.html"/>
+        <WebView x:Name="webView"/>
+        <Popup x:Name="Popup" IsOpen="False"  VerticalOffset="10" HorizontalOffset="200">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+                BorderThickness="1" Width="320" Height="160" RenderTransformOrigin="3.72,2.54">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBox Name="Modal_TextBox"  PlaceholderText="http://" Header="Host:" Width="250"/>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Button Content="Go" HorizontalAlignment="Center" Width="40" Margin="30 10" Click="Button_Go"/>
+                        <Button Content="Close" HorizontalAlignment="Center" Width="60" Margin="30 10" Click="Button_Close"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
+
+</Page>
